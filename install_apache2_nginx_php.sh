@@ -21,6 +21,11 @@ else
 	echo "--- --- --- --- --- --- --- --- --- --- ---"
 fi
 
+# Устанавливаем php
+echo "2) Устанавливаем php и его дополнительный модуль libapache2-mod-php"
+echo "--- --- --- --- --- --- --- --- --- --- ---"
+eval "sudo apt-get install php libapache2-mod-php"
+
 # Устанавливаем lynx
 echo "И-и-и-и. Устанавливаем lynx."
 eval "sudo apt-get install lynx"
