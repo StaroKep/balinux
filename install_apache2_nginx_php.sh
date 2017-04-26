@@ -9,12 +9,19 @@ is_apache=`grep -c apache temporary_file`
 # Если apache не установлен
 if [ "$is_apache" == "0" ]; then
 	# Устанавливаем его
-	echo "1) Необходим Apache! Для того, чтобы его установить введите пароль:"
+	echo "1) Необходим Apache!"
 	echo "--- --- --- --- --- --- --- --- --- --- ---"
+	eval "sudo apt-get update"
 	eval "sudo apt-get install apache2"
 	echo "--- --- --- --- --- --- --- --- --- --- ---"
 
 else
 	# Иначе выводим сообщение, что apache уже установлен
 	echo "1) Apache установлен"
+	echo "--- --- --- --- --- --- --- --- --- --- ---"
 fi
+
+# Устанавливаем lynx
+echo "И-и-и-и. Устанавливаем lynx."
+eval "sudo apt-get install lynx"
+echo "--- --- --- --- Ура! Все готово! --- --- --- ---"
