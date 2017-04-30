@@ -4,21 +4,18 @@ eval "sudo apt-get update"
 
 # 1. Устанавливаем Nginx
 eval "sudo apt-get install nginx"
-# 2.
-eval "echo 'server { listen 127.0.0.96:80; root /var/www/balinux_k_eremin; server_name balinux_k_eremin.local; location / { try_files $uri $uri/ /index.php; } location ~ \.php$ { proxy_set_header X-Real-IP  $remote_addr; proxy_set_header X-Forwarded-For $remote_addr; proxy_set_header Host $host; proxy_pass http://127.0.0.96:8080; } location ~ /\.ht { deny all; } }' > ~/balinux_k_eremin"
-# 3.
-eval "sudo cp ~/balinux_k_eremin /etc/nginx/sites-available/"
-# 4. 
-eval "rm -f ~/balinux_k_eremin"
-# 5.
+# 2. Копируем файл виртуального сервера в конфиг Nginx'a
+eval "sudo cp `dirname $0`/balinux_k_eremin /etc/nginx/sites-available/"
+# 3. Создаем ссылку
 eval "sudo ln -s /etc/nginx/sites-available/balinux_k_eremin /etc/nginx/sites-enabled/balinux_k_eremin"
-# 6.
+# 4. Создаем директорию для проекта
 eval "sudo mkdir /var/www/balinux_k_eremin"
-# 7.
+# 5. Даем полный доступ к этой папке
 eval "sudo chmod -R 777 /var/www/balinux_k_eremin"
-# 8.
-eval "echo 'Hello, World!' > /srv/www/balinux_k_eremin/index.html"
-
+# 6.
+eval "sudo cp `dirname $0`/index.html /var/www/balinux_k_eremin"
+# 10.
+eval "sudo service nginx start"
 
 
 
