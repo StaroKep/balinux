@@ -15,7 +15,7 @@ eval "sudo ln -s /etc/nginx/sites-available/balinux_k_eremin /etc/nginx/sites-en
 # 6.
 eval "sudo mkdir /var/www/balinux_k_eremin"
 # 7.
-eval "sudo chmod 777 /var/www/balinux_k_eremin"
+eval "sudo chmod -R 777 /var/www/balinux_k_eremin"
 # 8.
 eval "echo 'Hello, World!' > /srv/www/balinux_k_eremin/index.html"
 
