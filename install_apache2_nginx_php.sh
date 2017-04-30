@@ -16,7 +16,11 @@ eval "sudo chmod -R 777 /var/www/balinux_k_eremin"
 eval "sudo cp `dirname $0`/index.html /var/www/balinux_k_eremin"
 # 10.
 eval "sudo service nginx start"
+# 11.
+eval "sudo service nginx restart"
 
+# Устанавлвиаем lynx
+eval "sudo apt-get install lynx"
 
 
 
