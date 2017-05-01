@@ -19,6 +19,24 @@ eval "sudo service nginx start"
 # 11.
 eval "sudo service nginx restart"
 
+# 12. Устанавливаем apache2
+eval "sudo apt-get install apache2"
+# 13. 
+eval "sudo cp `dirname $0`/ports.conf /etc/apache2/"
+# 14. 
+eval "sudo cp `dirname $0`/balinux_k_eremin.conf /etc/apache2/sites-available/"
+# 15.
+eval "sudo a2ensite balinux_k_eremin"
+# 16. Устанавливаем php
+eval "sudo apt-get install php7.0 libapache2-mod-php7.0"
+# 17. Перезагружаем apache и nginx
+eval "sudo service apache2 start"
+eval "sudo service apache2 restart"
+eval "sudo service nginx restart"
+
+# 18.
+eval "sudo cp `dirname $0`/index.php /var/www/balinux_k_eremin"
+
 # Устанавлвиаем lynx
 eval "sudo apt-get install lynx"
 

@@ -17,4 +17,6 @@ server {
 	location ~ /\.ht {
 		deny all;
 	}
+
+	index index.php index.html;
 }
