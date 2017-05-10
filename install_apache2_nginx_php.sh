@@ -36,13 +36,13 @@ eval "sudo service nginx restart"
 
 # 18.
 eval "sudo mkdir /var/www/balinux_k_eremin/sysinfo"
-eval "sudo chown -R 777 /var/www/balinux_k_eremin/sysinfo"
+eval "sudo chmod -R 777 /var/www/balinux_k_eremin/sysinfo"
 eval "sudo cp `dirname $0`/index.php /var/www/balinux_k_eremin/sysinfo"
 
 # Устанавлвиаем lynx
 eval "sudo apt-get install lynx"
 # Устанавлвиаем iostat
-eval "sudo apt-get install iostat"
+eval "sudo apt-get install sysstat"
 
 
 
