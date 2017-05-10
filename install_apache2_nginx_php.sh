@@ -35,10 +35,14 @@ eval "sudo service apache2 restart"
 eval "sudo service nginx restart"
 
 # 18.
-eval "sudo cp `dirname $0`/index.php /var/www/balinux_k_eremin"
+eval "sudo mkdir /var/www/balinux_k_eremin/sysinfo"
+eval "sudo chown -R 777 /var/www/balinux_k_eremin/sysinfo"
+eval "sudo cp `dirname $0`/index.php /var/www/balinux_k_eremin/sysinfo"
 
 # Устанавлвиаем lynx
 eval "sudo apt-get install lynx"
+# Устанавлвиаем iostat
+eval "sudo apt-get install iostat"
 
 
 
